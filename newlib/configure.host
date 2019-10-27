@@ -577,6 +577,9 @@ case "${host}" in
   mips*-dec-*)
 	sys_dir=decstation
 	;;
+  mips*-ps2-*)
+  	sys_dir=ps2
+	;;
   mmix-knuth-mmixware)
 	sys_dir=mmixware
 	;;
@@ -827,6 +830,10 @@ newlib_cflags="${newlib_cflags} -DCLOCK_PROVIDED -DMALLOC_PROVIDED -DEXIT_PROVID
   mips64vr*-*-*)
 	default_newlib_io_long_long="yes"
 	newlib_cflags="${newlib_cflags} -DMISSING_SYSCALL_NAMES"
+	;;
+  mips*-ps2-elf*)
+	syscall_dir=syscalls
+	default_newlib_io_long_long="yes"
 	;;
   mips*-*-elf*)
 	default_newlib_io_long_long="yes"
